@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | My Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Our Store</h1>
+    </header>
+
+    <!-- Buttons to trigger login popup -->
+    <div class="button-container">
+        <button type="button" class="login">Log in</button>
+       
+    </div>
+
+    <!-- Login Popup -->
+    <div class="container">
+        <label class="icon-close"><i class="fa fa-times" aria-hidden="true"></i></label>
+
+        <div class="card">
+            <h3>Login</h3>
+            <form id="loginForm">
+                <div class="input-card">
+                    <span class="icon">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                    <input type="email" id="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-card">
+                    <span class="icon">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                    <input type="password" id="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-me">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+            </form>
+        </div>
+    </div> 
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Your One-Stop Shop for Everything!</h2>
+        <p>Explore our collection of premium products.</p>
+    </section>
+
+    <!-- JavaScript to handle login popup and redirect -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.querySelector('.container');
+            const loginButtons = document.querySelectorAll('.login');
+            const iconClose = document.querySelector('.icon-close');
+            const loginForm = document.getElementById("loginForm");
+
+            loginButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    container.classList.add('active-popup');
+                });
+            });
+
+            iconClose.addEventListener('click', () => {
+                container.classList.remove('active-popup');
+            });
+
+            // Handle form submission and redirect
+            loginForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+                alert("Login Successful! Redirecting to homepage...");
+                window.location.href = "index.html"; // Redirect to index.html
+            });
+        });
+    </script>
+
+</body>
+</html>

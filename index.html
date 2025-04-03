@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Dior</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="main">
+        <!-- Navbar Section -->
+        <div class="navbar">
+            <h2 class="logo">L<span>Z</span></h2>
+            
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </label>
+
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="product.html">PRODUCTS</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+
+           
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="main-section">
+            <h1 class="fdel">LEGO <span>ZONE</span></h1>
+            <p class="sen">
+                "LEGO revolutionized the world of play and creativity, introducing 
+                innovation, imagination, and endless possibilities to building. 
+                LEGO sets embody fun with their iconic bricks, intricate designs, 
+                and timeless themes—each crafted to inspire creativity and adventure."
+            </p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>FOLLOW US</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/jenyan.telesforo" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yna_rfslt/profilecard/?igsh=MTg5N2Y4NGVqYnljcw==" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+    
+            <div class="footer-section">
+                <ul class="footer-links">
+                    <li><a href="#" onclick="openPopup('privacy-popup')">Privacy Policy</a></li>
+                    <li><a href="#" onclick="openPopup('legal-popup')">Legal Notice</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 LEGO Zone. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    
+    <!-- Background Overlay -->
+    <div id="overlay" class="overlay" onclick="closeAllPopups()"></div>
+    
+    <!-- Privacy Policy Popup -->
+    <div id="privacy-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('privacy-popup')">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p>This is the privacy policy content. Your data is protected and managed securely.</p>
+        </div>
+    </div>
+    
+    <!-- Legal Notice Popup -->
+    <div id="legal-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('legal-popup')">&times;</span>
+            <h2>Legal Notice</h2>
+            <p>This is the legal notice content. Use of this site signifies your agreement to the terms.</p>
+        </div>
+    </div>
+    
+
+    <script src="java.js"></script>
+</body>
+</html>
+

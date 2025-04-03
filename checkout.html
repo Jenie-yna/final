@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Enter Your Details</h2>
+        <form id="checkout-form">
+            <label>Name:</label>
+            <input type="text" id="name" required><br>
+
+            <label>Address:</label>
+            <input type="text" id="address" required><br>
+
+            <label>Payment Method:</label>
+            <select id="payment-method">
+                <option>Credit Card</option>
+                <option>PayPal</option>
+                <option>Cash on delivery</option>
+            </select><br>
+
+            <button type="submit">Place Order</button>
+        </form>
+
+        <!-- Success Message -->
+        <p id="order-success" style="display:none; color: green; font-weight: bold;">Your order has been placed successfully! Thank you for your purchase.</p>
+    </main>
+
+    <script>
+        // Handle the form submission and display success message
+        document.getElementById("checkout-form").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent form from refreshing the page
+
+            // Get form data (you can store these details if needed, but for now, we're just displaying the success message)
+            const name = document.getElementById("name").value;
+            const address = document.getElementById("address").value;
+            const paymentMethod = document.getElementById("payment-method").value;
+
+            // Check if all fields are filled
+            if (name && address && paymentMethod) {
+                // Display success message
+                document.getElementById("order-success").style.display = "block";
+
+                // Optionally, reset the form (you can comment this out if you want to keep the form filled)
+                document.getElementById("checkout-form").reset();
+
+                // Optionally, clear the cart after successful order
+                localStorage.removeItem("cart");
+
+                // Redirect after a short delay (if desired)
+                setTimeout(() => {
+                    window.location.href = "index.html";  // Redirect to homepage after 3 seconds
+                }, 3000);
+            } else {
+                alert("Please fill in all fields before placing the order.");
+            }
+        });
+    </script>
+</body>
+</html>
